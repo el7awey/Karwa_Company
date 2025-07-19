@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <title>الرئيسية - شركة كروة لتوصيل الطلبات الإستهلاكية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <style>
+        /* أدرجت هنا التنسيقات التي أرسلتها سابقاً */
+        body {
+            direction: rtl;
+            font-family: 'Poppins', 'Cairo', sans-serif;
+            margin: 0;
+            background-color: #fffdf7;
+            color: #222;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: right;
+padding: 40px 30px;
+ padding-top: 60px;
+        }
+        .main-header {
+    position: fixed; /* بدل sticky إلى fixed */
+    top: 0;
+    left: 0;          /* ضروري علشان يلتصق بالزاوية اليسرى */
+    right: 0;         /* عشان يمتد لعرض الصفحة كامل */
+    z-index: 1000;    /* علشان يفضل فوق كل العناصر */
+    background-color: #fff; /* لازم خلفية عشان ما تبقاش شفافة */
+    border-bottom: 2px solid #f1f1f1;
+    padding: 20px 0;
+    width: 100%;      /* ضروري علشان يشغل العرض كله */
+    box-sizing: border-box;
+}
+
+        .container {
+            width: 90%;
+            max-width: 2000px;
+            margin: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            direction: rtl;
+ 	    
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f57c00;
+            cursor: default;
+            user-select: none;
+            margin-left: auto;
+        }
+        .main-nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .main-nav a:hover {
+            color: #f57c00;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fefefe;
+            color: #777;
+            border-top: 1px solid #ddd;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 0;
+            font-weight: 700;
+        }
+        .hero-text {
+            max-width: 90%;
+            font-weight: 700;
+        }
+        .hero img {
+            max-width: 400px;
+            height: auto;
+        }
+        .btn {
+            background-color: orange;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            text-decoration: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #e67e22;
+        }
+        .services, .contact {
+            padding: 40px;
+            background-color: #fefae0;
+            margin-top: 20px;
+            border-radius: 10px;
+            font-size: 24px;
+        }
+        .services ul {
+            list-style-type: disc;
+            padding-right: 20px;
+        }
+        .contact a {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: #222;
+            font-weight: 700;
+            direction: ltr;
+            unicode-bidi: embed;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .main-nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero img {
+                max-width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+            .services, .contact {
+                padding: 20px;
+                font-size: 16px;
+            }
+            .logo {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">شركة كروة لتوصيل الطلبات الإستهلاكية 🚚</div>
+            <nav class="main-nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="services.html">خدماتنا</a>
+                <a href="about.html">عن الشركة</a>
+                <a href="contact.html">اطلب خدمة</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>شركة توصيل طلبات داخلية آمنة</h1>
+                <a href="https://wa.me/96560464711?text=السلام عليكم، أود طلب خدمة توصيل" class="btn" target="_blank" rel="noopener">اطلب الآن</a>
+            </div>
+            <div class="hero-image">
+                <img src="CSS/Images/LOGO2.png" alt="توصيل سريع" />
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>خدماتنا</h2>
+            <ul>
+                <li>توصيل مطاعم</li>
+                <li>توصيل أغراض</li>
+                <li>توصيل مستعجل</li>
+            </ul>
+        </section>
+
+        <section class="contact">
+            <h2>تواصل معنا</h2>
+            <a href="tel:96560464711">📞 +965 6046 4711</a>
+            <p>karwa@gmail.com</p>
+            <p>Khaitan, Al Farwaniyah, Kuwait</p>
+        </section>
+    </main>
+
+    <footer>
+        جميع الحقوق محفوظة لشركة كروة لتوصيل الطلبات الإستهلاكية &copy; 2025
+    </footer>
+</body>
+</html>
