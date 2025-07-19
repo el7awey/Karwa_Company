@@ -63,6 +63,40 @@ padding: 40px 30px;
         .main-nav a:hover {
             color: #f57c00;
         }
+        /* Start dark-mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+        body.dark-mode header,
+        body.dark-mode .main-header {
+            background-color: #1e1e1e;
+            border-bottom: 2px solid #333;
+        }
+        body.dark-mode .main-nav a {
+            color: #ddd;
+        }
+        body.dark-mode footer {
+            background-color: #1e1e1e;
+            color: #ccc;
+            border-top: 1px solid #333;
+        }
+        body.dark-mode .services,
+        body.dark-mode .contact {
+            background-color: #1f1f1f;
+        }
+        /* toggle button */
+        #theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+        }
+        body.dark-mode #theme-toggle {
+            color: #ddd;
+        }
+        /* End dark-mode styles */
         footer {
             text-align: center;
             padding: 20px;
@@ -160,6 +194,7 @@ padding: 40px 30px;
                 <a href="about.html">عن الشركة</a>
                 <a href="contact.html">اطلب خدمة</a>
             </nav>
+            <button id="theme-toggle" aria-label="تبديل الوضع">🌙</button>
         </div>
     </header>
 
@@ -194,5 +229,30 @@ padding: 40px 30px;
     <footer>
         جميع الحقوق محفوظة لشركة كروة لتوصيل الطلبات الإستهلاكية &copy; 2025
     </footer>
+    <script>
+        (function () {
+            const body = document.body;
+            const toggleBtn = document.getElementById('theme-toggle');
+            function setTheme(dark) {
+                if (dark) {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                    if (toggleBtn) toggleBtn.textContent = '☀️';
+                } else {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light');
+                    if (toggleBtn) toggleBtn.textContent = '🌙';
+                }
+            }
+            // Initialize according to saved preference
+            setTheme(localStorage.getItem('theme') === 'dark');
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    setTheme(!body.classList.contains('dark-mode'));
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
