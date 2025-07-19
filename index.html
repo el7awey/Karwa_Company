@@ -6,31 +6,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="CSS/style.css" />
     <style>
-        /* أدرجت هنا التنسيقات التي أرسلتها سابقاً */
+        /* CSS Variables for theming */
+        :root {
+            --bg-color: #fffdf7;
+            --text-color: #222;
+            --header-bg: #fff;
+            --border-color: #f1f1f1;
+            --footer-bg: #fefefe;
+            --footer-text: #777;
+            --footer-border: #ddd;
+            --services-bg: #fefae0;
+            --nav-text: #333;
+            --nav-hover: #f57c00;
+            --btn-bg: orange;
+            --btn-hover: #e67e22;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --header-bg: #2d2d2d;
+            --border-color: #404040;
+            --footer-bg: #2d2d2d;
+            --footer-text: #b0b0b0;
+            --footer-border: #404040;
+            --services-bg: #333333;
+            --nav-text: #e0e0e0;
+            --nav-hover: #f57c00;
+            --btn-bg: #f57c00;
+            --btn-hover: #e67e22;
+        }
+
         body {
             direction: rtl;
             font-family: 'Poppins', 'Cairo', sans-serif;
             margin: 0;
-            background-color: #fffdf7;
-            color: #222;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-size: 16px;
             line-height: 1.6;
             text-align: right;
-padding: 40px 30px;
- padding-top: 60px;
+            padding: 40px 30px;
+            padding-top: 60px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         .main-header {
-    position: fixed; /* بدل sticky إلى fixed */
-    top: 0;
-    left: 0;          /* ضروري علشان يلتصق بالزاوية اليسرى */
-    right: 0;         /* عشان يمتد لعرض الصفحة كامل */
-    z-index: 1000;    /* علشان يفضل فوق كل العناصر */
-    background-color: #fff; /* لازم خلفية عشان ما تبقاش شفافة */
-    border-bottom: 2px solid #f1f1f1;
-    padding: 20px 0;
-    width: 100%;      /* ضروري علشان يشغل العرض كله */
-    box-sizing: border-box;
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--header-bg);
+            border-bottom: 2px solid var(--border-color);
+            padding: 20px 0;
+            width: 100%;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
 
         .container {
             width: 90%;
@@ -42,8 +75,8 @@ padding: 40px 30px;
             gap: 20px;
             flex-wrap: wrap;
             direction: rtl;
- 	    
         }
+
         .logo {
             font-size: 28px;
             font-weight: 700;
@@ -52,26 +85,56 @@ padding: 40px 30px;
             user-select: none;
             margin-left: auto;
         }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
         .main-nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #333;
+            color: var(--nav-text);
             font-weight: 500;
             font-size: 18px;
             transition: color 0.3s ease;
         }
+
         .main-nav a:hover {
-            color: #f57c00;
+            color: var(--nav-hover);
         }
+
+        /* Dark mode toggle button */
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--nav-text);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--nav-text);
+            transition: all 0.3s ease;
+            margin-right: 15px;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--nav-hover);
+            border-color: var(--nav-hover);
+            color: white;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #fefefe;
-            color: #777;
-            border-top: 1px solid #ddd;
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            border-top: 1px solid var(--footer-border);
             margin-top: 50px;
             font-size: 14px;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
+
         .hero {
             display: flex;
             align-items: center;
@@ -79,16 +142,19 @@ padding: 40px 30px;
             padding: 40px 0;
             font-weight: 700;
         }
+
         .hero-text {
             max-width: 90%;
             font-weight: 700;
         }
+
         .hero img {
             max-width: 400px;
             height: auto;
         }
+
         .btn {
-            background-color: orange;
+            background-color: var(--btn-bg);
             padding: 10px 20px;
             color: white;
             border: none;
@@ -98,37 +164,52 @@ padding: 40px 30px;
             transition: background-color 0.3s ease;
             display: inline-block;
         }
+
         .btn:hover {
-            background-color: #e67e22;
+            background-color: var(--btn-hover);
         }
+
         .services, .contact {
             padding: 40px;
-            background-color: #fefae0;
+            background-color: var(--services-bg);
             margin-top: 20px;
             border-radius: 10px;
             font-size: 24px;
+            transition: background-color 0.3s ease;
         }
+
         .services ul {
             list-style-type: disc;
             padding-right: 20px;
         }
+
         .contact a {
             display: inline-block;
             margin-bottom: 10px;
-            color: #222;
+            color: var(--text-color);
             font-weight: 700;
             direction: ltr;
             unicode-bidi: embed;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
                 align-items: flex-start;
             }
+            .main-nav {
+                flex-direction: column;
+                width: 100%;
+            }
             .main-nav a {
                 display: block;
                 margin: 10px 0;
+            }
+            .theme-toggle {
+                margin: 10px 0;
+                align-self: flex-start;
             }
             .hero {
                 flex-direction: column;
@@ -155,10 +236,11 @@ padding: 40px 30px;
         <div class="container">
             <div class="logo">شركة كروة لتوصيل الطلبات الإستهلاكية 🚚</div>
             <nav class="main-nav">
+                <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
                 <a href="index.html">الرئيسية</a>
-                <a href="services.html">خدماتنا</a>
-                <a href="about.html">عن الشركة</a>
-                <a href="contact.html">اطلب خدمة</a>
+                <a href="Services.html">خدماتنا</a>
+                <a href="About.html">عن الشركة</a>
+                <a href="Contact.html">اطلب خدمة</a>
             </nav>
         </div>
     </header>
@@ -194,5 +276,36 @@ padding: 40px 30px;
     <footer>
         جميع الحقوق محفوظة لشركة كروة لتوصيل الطلبات الإستهلاكية &copy; 2025
     </footer>
+
+    <script>
+        // Dark mode functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+            } else {
+                themeToggle.textContent = '🌙';
+            }
+        });
+    </script>
 </body>
 </html>
