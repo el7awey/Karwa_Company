@@ -99,22 +99,31 @@
             color: var(--nav-hover);
         }
 
-        /* Dark mode toggle button */
+        /* Floating dark mode toggle button */
         .theme-toggle {
-            background: none;
-            border: 2px solid var(--nav-text);
-            color: var(--nav-text);
-            padding: 8px 12px;
-            border-radius: 20px;
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--nav-text);
+            border: none;
+            color: var(--bg-color);
+            padding: 15px;
+            border-radius: 50%;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 20px;
             transition: all 0.3s ease;
-            margin-right: 15px;
+            z-index: 9999;
+            box-shadow: 0 4px 15px var(--shadow);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .theme-toggle:hover {
-            background-color: var(--nav-text);
-            color: var(--bg-color);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px var(--shadow);
         }
 
         footer {
@@ -214,6 +223,15 @@
                 font-size: 24px;
                 margin-bottom: 10px;
             }
+            
+            /* Adjust floating button for mobile */
+            .theme-toggle {
+                bottom: 20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+            }
         }
         body {
             min-height: 100vh;
@@ -235,7 +253,6 @@
                 <a href="services.html">خدماتنا</a>
                 <a href="about.html">عن الشركة</a>
                 <a href="contact.html">اطلب خدمة</a>
-                <button class="theme-toggle" onclick="toggleTheme()" title="تبديل الوضع المظلم">🌙</button>
             </nav>
         </div>
     </header>
@@ -279,6 +296,9 @@
 
         </section>
     </main>
+
+    <!-- Floating dark mode toggle button -->
+    <button class="theme-toggle" onclick="toggleTheme()" title="تبديل الوضع المظلم">🌙</button>
 
     <footer>
         جميع الحقوق محفوظة لشركة كروة لتوصيل الطلبات الإستهلاكية &copy; 2025
