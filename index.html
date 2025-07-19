@@ -1,36 +1,70 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
     <meta charset="UTF-8" />
     <title>الرئيسية - شركة كروة لتوصيل الطلبات الإستهلاكية</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="CSS/style.css" />
     <style>
+        /* CSS Variables for theming */
+        :root {
+            --bg-primary: #fffdf7;
+            --bg-secondary: #fefae0;
+            --bg-header: #fff;
+            --bg-footer: #fefefe;
+            --text-primary: #222;
+            --text-secondary: #333;
+            --text-muted: #777;
+            --border-color: #f1f1f1;
+            --border-light: #ddd;
+            --accent-color: #f57c00;
+            --accent-hover: #e67e22;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-header: #2d2d2d;
+            --bg-footer: #2d2d2d;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --text-muted: #b0b0b0;
+            --border-color: #404040;
+            --border-light: #404040;
+            --accent-color: #ff8c42;
+            --accent-hover: #ff6b1a;
+            --shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
         /* أدرجت هنا التنسيقات التي أرسلتها سابقاً */
         body {
             direction: rtl;
             font-family: 'Poppins', 'Cairo', sans-serif;
             margin: 0;
-            background-color: #fffdf7;
-            color: #222;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             font-size: 16px;
             line-height: 1.6;
             text-align: right;
-padding: 40px 30px;
- padding-top: 60px;
+            padding: 40px 30px;
+            padding-top: 60px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+        
         .main-header {
-    position: fixed; /* بدل sticky إلى fixed */
-    top: 0;
-    left: 0;          /* ضروري علشان يلتصق بالزاوية اليسرى */
-    right: 0;         /* عشان يمتد لعرض الصفحة كامل */
-    z-index: 1000;    /* علشان يفضل فوق كل العناصر */
-    background-color: #fff; /* لازم خلفية عشان ما تبقاش شفافة */
-    border-bottom: 2px solid #f1f1f1;
-    padding: 20px 0;
-    width: 100%;      /* ضروري علشان يشغل العرض كله */
-    box-sizing: border-box;
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--bg-header);
+            border-bottom: 2px solid var(--border-color);
+            padding: 20px 0;
+            width: 100%;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
 
         .container {
             width: 90%;
@@ -42,36 +76,68 @@ padding: 40px 30px;
             gap: 20px;
             flex-wrap: wrap;
             direction: rtl;
- 	    
         }
+        
         .logo {
             font-size: 28px;
             font-weight: 700;
-            color: #f57c00;
+            color: var(--accent-color);
             cursor: default;
             user-select: none;
             margin-left: auto;
+            transition: color 0.3s ease;
         }
+        
         .main-nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #333;
+            color: var(--text-secondary);
             font-weight: 500;
             font-size: 18px;
             transition: color 0.3s ease;
         }
+        
         .main-nav a:hover {
-            color: #f57c00;
+            color: var(--accent-color);
         }
+
+        /* Dark Mode Toggle Button */
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .theme-toggle .icon {
+            font-size: 16px;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #fefefe;
-            color: #777;
-            border-top: 1px solid #ddd;
+            background-color: var(--bg-footer);
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-light);
             margin-top: 50px;
             font-size: 14px;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
+        
         .hero {
             display: flex;
             align-items: center;
@@ -79,16 +145,19 @@ padding: 40px 30px;
             padding: 40px 0;
             font-weight: 700;
         }
+        
         .hero-text {
             max-width: 90%;
             font-weight: 700;
         }
+        
         .hero img {
             max-width: 400px;
             height: auto;
         }
+        
         .btn {
-            background-color: orange;
+            background-color: var(--accent-color);
             padding: 10px 20px;
             color: white;
             border: none;
@@ -98,29 +167,40 @@ padding: 40px 30px;
             transition: background-color 0.3s ease;
             display: inline-block;
         }
+        
         .btn:hover {
-            background-color: #e67e22;
+            background-color: var(--accent-hover);
         }
+        
         .services, .contact {
             padding: 40px;
-            background-color: #fefae0;
+            background-color: var(--bg-secondary);
             margin-top: 20px;
             border-radius: 10px;
             font-size: 24px;
+            transition: background-color 0.3s ease;
         }
+        
         .services ul {
             list-style-type: disc;
             padding-right: 20px;
         }
+        
         .contact a {
             display: inline-block;
             margin-bottom: 10px;
-            color: #222;
+            color: var(--text-primary);
             font-weight: 700;
             direction: ltr;
             unicode-bidi: embed;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
+
+        .contact a:hover {
+            color: var(--accent-color);
+        }
+        
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -147,6 +227,10 @@ padding: 40px 30px;
                 font-size: 24px;
                 margin-bottom: 10px;
             }
+            .theme-toggle {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -160,6 +244,10 @@ padding: 40px 30px;
                 <a href="about.html">عن الشركة</a>
                 <a href="contact.html">اطلب خدمة</a>
             </nav>
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <span class="icon">🌙</span>
+                <span class="text">الوضع المظلم</span>
+            </button>
         </div>
     </header>
 
@@ -194,5 +282,40 @@ padding: 40px 30px;
     <footer>
         جميع الحقوق محفوظة لشركة كروة لتوصيل الطلبات الإستهلاكية &copy; 2025
     </footer>
+
+    <script>
+        // Dark mode functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            updateThemeButton(newTheme);
+        }
+
+        function updateThemeButton(theme) {
+            const button = document.querySelector('.theme-toggle');
+            const icon = button.querySelector('.icon');
+            const text = button.querySelector('.text');
+            
+            if (theme === 'dark') {
+                icon.textContent = '☀️';
+                text.textContent = 'الوضع الفاتح';
+            } else {
+                icon.textContent = '🌙';
+                text.textContent = 'الوضع المظلم';
+            }
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButton(savedTheme);
+        });
+    </script>
 </body>
 </html>
