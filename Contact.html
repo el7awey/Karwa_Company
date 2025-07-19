@@ -1,105 +1,253 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
     <meta charset="UTF-8" />
     <title>تواصل معنا - شركة كروة لتوصيل الطلبات الإستهلاكية</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="CSS/style.css" />
     <style>
+        /* CSS Variables for theming */
+        :root {
+            --bg-primary: #fffdf7;
+            --bg-secondary: #fefae0;
+            --bg-header: #fff;
+            --bg-footer: #fefefe;
+            --text-primary: #222;
+            --text-secondary: #333;
+            --text-muted: #777;
+            --border-color: #f1f1f1;
+            --border-light: #ddd;
+            --accent-color: #f57c00;
+            --accent-hover: #e67e22;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-header: #2d2d2d;
+            --bg-footer: #2d2d2d;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --text-muted: #b0b0b0;
+            --border-color: #404040;
+            --border-light: #404040;
+            --accent-color: #ff8c42;
+            --accent-hover: #ff6b1a;
+            --shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
         body {
             direction: rtl;
             font-family: 'Poppins', 'Cairo', sans-serif;
             margin: 20px 20px 40px 20px;
-            background-color: #fffdf7;
-            color: #222;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             font-size: 16px;
             line-height: 1.6;
             text-align: right;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+        
         h2 {
             font-weight: 700;
             margin-bottom: 15px;
             font-size: 28px;
         }
+        
         p {
             font-size: 18px;
             line-height: 1.6;
         }
+        
         ul {
             list-style-type: disc;
             padding-right: 20px;
             font-size: 18px;
         }
+        
         ul li {
             margin-bottom: 10px;
         }
+        
         a.tel-link {
             display: inline-block;
             margin-bottom: 10px;
-            color: #222;
+            color: var(--text-primary);
             font-weight: 700;
             direction: ltr;
             unicode-bidi: embed;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
+
+        a.tel-link:hover {
+            color: var(--accent-color);
+        }
+
+        a[href^="mailto:"] {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a[href^="mailto:"]:hover {
+            color: var(--accent-color);
+        }
+        
         header, footer {
             width: 90%;
             max-width: 2000px;
             margin: auto;
         }
+        
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #fefefe;
-            color: #777;
-            border-top: 1px solid #ddd;
+            background-color: var(--bg-footer);
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-light);
             margin-top: 50px;
             font-size: 14px;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
+        
         .logo {
             font-size: 28px;
             font-weight: 700;
-            color: #f57c00;
+            color: var(--accent-color);
             margin-bottom: 30px;
             user-select: none;
+            transition: color 0.3s ease;
         }
+        
         nav.main-nav {
             margin-bottom: 30px;
         }
+        
         nav.main-nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #333;
+            color: var(--text-secondary);
             font-weight: 500;
             font-size: 18px;
+            transition: color 0.3s ease;
         }
+        
         nav.main-nav a:hover {
-            color: #f57c00;
+            color: var(--accent-color);
+        }
+
+        /* Header container for navigation and theme toggle */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Dark Mode Toggle Button */
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .theme-toggle .icon {
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .theme-toggle {
+                align-self: flex-end;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">شركة كروة لتوصيل الطلبات الإستهلاكية 🚚</div>
-        <nav class="main-nav">
-            <a href="index.html">الرئيسية</a>
-            <a href="services.html">خدماتنا</a>
-            <a href="about.html">عن الشركة</a>
-            <a href="contact.html">اطلب خدمة</a>
-        </nav>
+        <div class="header-container">
+            <div>
+                <div class="logo">شركة كروة لتوصيل الطلبات الإستهلاكية 🚚</div>
+                <nav class="main-nav">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="services.html">خدماتنا</a>
+                    <a href="about.html">عن الشركة</a>
+                    <a href="contact.html">اطلب خدمة</a>
+                </nav>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <span class="icon">🌙</span>
+                <span class="text">الوضع المظلم</span>
+            </button>
+        </div>
     </header>
 
     <main>
         <h2>تواصل معنا</h2>
         <p>للاستفسار أو الطلبات، تواصل معنا عبر البريد الإلكتروني أو الهاتف:</p>
         <ul>
-            <li>الهاتف: <a class="tel-link" href="tel:123456789">123456789</a></li>
-            <li>البريد: <a href="mailto:info@delivery.com">info@delivery.com</a></li>
+            <li>الهاتف: <a class="tel-link" href="tel:96560464711">+965 6046 4711</a></li>
+            <li>البريد: <a href="mailto:karwa@gmail.com">karwa@gmail.com</a></li>
         </ul>
     </main>
 
     <footer>
         جميع الحقوق محفوظة لشركة كروة لتوصيل الطلبات الإستهلاكية &copy; 2025
     </footer>
+
+    <script>
+        // Dark mode functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            updateThemeButton(newTheme);
+        }
+
+        function updateThemeButton(theme) {
+            const button = document.querySelector('.theme-toggle');
+            const icon = button.querySelector('.icon');
+            const text = button.querySelector('.text');
+            
+            if (theme === 'dark') {
+                icon.textContent = '☀️';
+                text.textContent = 'الوضع الفاتح';
+            } else {
+                icon.textContent = '🌙';
+                text.textContent = 'الوضع المظلم';
+            }
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeButton(savedTheme);
+        });
+    </script>
 </body>
 </html>
