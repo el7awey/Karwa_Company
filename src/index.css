@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Kuwait Express Hub Design System - Modern Delivery Company */
+
+@layer base {
+  :root {
+    /* Brand Colors - Professional delivery service palette */
+    --background: 0 0% 100%;
+    --foreground: 215 28% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    /* Primary: Deep trustworthy blue */
+    --primary: 215 84% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 215 84% 35%;
+    --primary-dark: 215 84% 15%;
+
+    /* Secondary: Energetic orange for CTAs */
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 25 95% 63%;
+    --secondary-dark: 25 95% 43%;
+
+    /* Neutral tones */
+    --muted: 210 20% 98%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 20% 98%;
+    --accent-foreground: 215 28% 17%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 20% 92%;
+    --input: 215 20% 92%;
+    --ring: 215 84% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --success: 145 63% 42%;
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 98%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(215 84% 25%) 0%, hsl(215 84% 35%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(25 95% 63%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(215 84% 25%) 0%, hsl(25 95% 53%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(215 84% 25% / 0.1);
+    --shadow-medium: 0 8px 25px -5px hsl(215 84% 25% / 0.15);
+    --shadow-strong: 0 25px 50px -12px hsl(215 84% 25% / 0.25);
+    --shadow-glow: 0 0 30px hsl(25 95% 53% / 0.3);
+
+    /* Typography */
+    --font-primary: 'Poppins', sans-serif;
+    --font-arabic: 'Cairo', sans-serif;
+
+    /* Animations */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Professional delivery company theme */
+    --background: 215 28% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 215 28% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 215 28% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 215 84% 65%;
+    --primary-foreground: 215 28% 8%;
+    --primary-light: 215 84% 75%;
+    --primary-dark: 215 84% 55%;
+
+    --secondary: 25 95% 60%;
+    --secondary-foreground: 215 28% 8%;
+    --secondary-light: 25 95% 70%;
+    --secondary-dark: 25 95% 50%;
+
+    --muted: 215 28% 12%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 215 28% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 28% 18%;
+    --input: 215 28% 18%;
+    --ring: 215 84% 65%;
+
+    --success: 145 63% 52%;
+    --warning: 45 93% 57%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(215 84% 65%) 0%, hsl(215 84% 75%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 60%) 0%, hsl(25 95% 70%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(215 84% 25%) 0%, hsl(25 95% 53%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(215 28% 10%) 0%, hsl(215 28% 15%) 100%);
+
+    /* Dark mode shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 25px -5px hsl(0 0% 0% / 0.4);
+    --shadow-strong: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 30px hsl(25 95% 53% / 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-primary;
+    transition: var(--transition-smooth);
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+
+  .font-arabic {
+    font-family: var(--font-arabic);
+  }
+
+  .font-primary {
+    font-family: var(--font-primary);
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground;
+    @apply px-8 py-4 rounded-xl font-semibold text-lg;
+    @apply shadow-lg hover:shadow-xl transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-glow;
+  }
+
+  .btn-outline-hero {
+    @apply border-2 border-primary text-primary bg-transparent;
+    @apply px-8 py-4 rounded-xl font-semibold text-lg;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    @apply transition-all duration-300 hover:scale-105;
+  }
+
+  /* Card Variants */
+  .card-elevated {
+    @apply bg-gradient-to-br from-card to-muted/50;
+    @apply rounded-2xl shadow-medium hover:shadow-strong;
+    @apply transition-all duration-300 hover:-translate-y-2;
+    @apply border border-border/50;
+  }
+
+  .card-service {
+    @apply card-elevated p-8 text-center;
+    @apply hover:bg-gradient-to-br hover:from-primary/5 hover:to-secondary/5;
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .text-gradient-reverse {
+    @apply bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent;
+  }
+
+  /* Animations */
+  .fade-in-up {
+    @apply animate-fade-in;
+  }
+
+  .hover-float {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  /* WhatsApp Button */
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50;
+    @apply bg-green-500 hover:bg-green-600 text-white;
+    @apply w-16 h-16 rounded-full shadow-strong;
+    @apply flex items-center justify-center;
+    @apply transition-all duration-300 hover:scale-110;
+    @apply animate-pulse hover:animate-none;
+  }
+
+  /* Language Switcher */
+  .lang-switcher {
+    @apply bg-muted/80 backdrop-blur-sm rounded-full px-4 py-2;
+    @apply border border-border/50 shadow-soft;
+    @apply transition-all duration-300 hover:shadow-medium;
+  }
+
+  /* Smooth Scroll */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* RTL Support */
+  .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(1);
+  }
+
+  /* Animation Delays */
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+}
