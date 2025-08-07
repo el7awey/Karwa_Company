@@ -127,7 +127,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="text-white/60 text-sm lg:text-base text-center md:text-right rtl:md:text-left">
               <p>
-                © 2024 {language.code === 'ar' ? 'مركز الكويت السريع' : 'Kuwait Express Hub'}. {t('footer.rights')}
+                © 2024 {language.code === 'ar' ? 'شركة كروة لتوصيل الطلبات' : 'Karwa Delivery Services'}. {t('footer.rights')}
               </p>
             </div>
           </div>
