@@ -37,7 +37,8 @@ const Footer = () => {
 <div className="lg:col-span-2">
   <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6">
     <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-medium">
-       {/* Light Mode Logo */}
+  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl overflow-hidden shadow-medium bg-white dark:bg-zinc-900">
+    {/* Light Mode Logo */}
     <img
       src="/logo.png" // ← الصورة المناسبة للوضع الفاتح
       alt="Karwa Logo Light"
@@ -49,6 +50,7 @@ const Footer = () => {
       alt="Karwa Logo Dark"
       className="w-full h-full object-contain hidden dark:block"
     />
+  </div>
     </div>
     <div>
       <h3 className="text-xl lg:text-2xl font-bold text-white">
