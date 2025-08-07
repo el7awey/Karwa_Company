@@ -49,7 +49,6 @@ const Footer = () => {
       className="w-full h-full object-contain hidden dark:block"
     />
     </div>
-    <div>
       <h3 className="text-xl lg:text-2xl font-bold text-white">
         {language.code === 'ar' ? 'شركة كروة لتوصيل الطلبات ' : 'Karwa Delivery Services'}
       </h3>
