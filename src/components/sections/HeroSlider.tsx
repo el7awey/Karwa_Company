@@ -82,11 +82,12 @@ const HeroSlider = () => {
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className="w-full h-full object-cover"
+           <img
+             src={slide.image}
+             alt={slide.title}
+             className="w-full h-full object-contain md:object-cover"
             />
+
             <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-secondary/40"></div>
           </div>
         ))}
