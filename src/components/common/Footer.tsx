@@ -36,22 +36,23 @@ const Footer = () => {
     {/* Company Info */}
 <div className="lg:col-span-2">
   <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6">
-    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-medium">
-  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl overflow-hidden shadow-medium bg-white dark:bg-zinc-900">
-    {/* Light Mode Logo */}
-    <img
-      src="/logo.png" // ← الصورة المناسبة للوضع الفاتح
-      alt="Karwa Logo Light"
-      className="w-full h-full object-contain block dark:hidden"
-    />
-    {/* Dark Mode Logo */}
-    <img
-      src="/logo_dark2.png" // ← الصورة المناسبة للوضع الداكن
-      alt="Karwa Logo Dark"
-      className="w-full h-full object-contain hidden dark:block"
-    />
-  </div>
+    {/* Logo container */}
+    <div className="w-12 h-12 rounded-xl overflow-hidden shadow-medium bg-white dark:bg-zinc-900">
+      {/* Light Mode Logo */}
+      <img
+        src="/logo.png"
+        alt="Karwa Logo Light"
+        className="w-full h-full object-contain block dark:hidden"
+      />
+      {/* Dark Mode Logo */}
+      <img
+        src="/logo_dark2.png"
+        alt="Karwa Logo Dark"
+        className="w-full h-full object-contain hidden dark:block"
+      />
     </div>
+
+    {/* Company Name & Subtitle */}
     <div>
       <h3 className="text-xl lg:text-2xl font-bold text-white">
         {language.code === 'ar' ? 'شركة كروة لتوصيل الطلبات' : 'Karwa Delivery Services'}
@@ -66,6 +67,7 @@ const Footer = () => {
     {t('footer.description')}
   </p>
 </div>
+
 
 
             {/* Contact Info */}
