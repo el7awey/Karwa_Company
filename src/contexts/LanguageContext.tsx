@@ -44,7 +44,7 @@ const translations = {
     'service.tracking.description': 'Track your orders live with our advanced GPS system',
     
     // About
-    'about.title': 'About Kuwait Express Hub',
+    'about.title': 'About Karwa Delivery Services',
     'about.subtitle': 'Leading delivery service in Khaitan since 2019',
     'about.description': 'We are a locally-owned delivery company serving Khaitan and the greater Kuwait area. Our mission is to provide fast, reliable, and professional delivery services to both individuals and businesses.',
     
@@ -96,7 +96,7 @@ const translations = {
     'service.tracking.description': 'تتبع طلباتك مباشرة مع نظام GPS المتقدم',
     
     // About
-    'about.title': 'عن مركز الكويت السريع',
+    'about.title': 'عن شركة كروة لتوصيل الطلبات',
     'about.subtitle': 'خدمة التوصيل الرائدة في الكويت منذ 2019',
     'about.description': 'نحن شركة توصيل محلية تخدم خيطان ومنطقة الكويت الكبرى. مهمتنا هي تقديم خدمات توصيل سريعة وموثوقة ومهنية للأفراد والشركات.',
     
