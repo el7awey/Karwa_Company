@@ -33,22 +33,24 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-16">
           
-       {/* Company Info */}
+      {/* Company Info */}
 <div className="lg:col-span-2">
   <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6">
     <div className="w-12 h-12 rounded-xl overflow-hidden shadow-medium">
+      {/* Light Mode Logo */}
       <img
-      src="/logo.png" // ← الصورة المناسبة للوضع الفاتح
-      alt="Karwa Logo Light"
-      className="w-full h-full object-contain block dark:hidden"
-    />
-    {/* Dark Mode Logo */}
-    <img
-      src="/logo_dark2.png" // ← الصورة المناسبة للوضع الداكن
-      alt="Karwa Logo Dark"
-      className="w-full h-full object-contain hidden dark:block"
-    />
+        src="/logo.png"
+        alt="Karwa Logo Light"
+        className="w-full h-full object-contain block dark:hidden"
+      />
+      {/* Dark Mode Logo */}
+      <img
+        src="/logo_dark2.png"
+        alt="Karwa Logo Dark"
+        className="w-full h-full object-contain hidden dark:block"
+      />
     </div>
+    <div>
       <h3 className="text-xl lg:text-2xl font-bold text-white">
         {language.code === 'ar' ? 'شركة كروة لتوصيل الطلبات ' : 'Karwa Delivery Services'}
       </h3>
@@ -57,11 +59,12 @@ const Footer = () => {
       </p>
     </div>
   </div>
+
+  <p className="text-white/80 mb-6 leading-relaxed max-w-md">
+    {t('footer.description')}
+  </p>
 </div>
 
-            <p className="text-white/80 mb-6 leading-relaxed max-w-md">
-              {t('footer.description')}
-            </p>
 
             {/* Contact Info */}
             <div className="space-y-3">
