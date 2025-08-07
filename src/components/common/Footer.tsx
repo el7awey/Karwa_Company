@@ -33,25 +33,38 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-16">
           
-     {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6">
-              <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-medium">
-                <span className="text-primary-foreground font-bold text-xl">K</span>
-              </div>
-              <div>
-                <h3 className="text-xl lg:text-2xl font-bold text-white">
-                  {language.code === 'ar' ? 'مركز الكويت السريع' : 'Kuwait Express Hub'}
-                </h3>
-                <p className="text-sm text-white/70">
-                  {language.code === 'ar' ? 'خدمة التوصيل الموثوقة' : 'Reliable Delivery Service'}
-                </p>
-              </div>
-            </div>
-            
-            <p className="text-white/80 mb-6 leading-relaxed max-w-md">
-              {t('footer.description')}
-            </p>
+    {/* Company Info */}
+<div className="lg:col-span-2">
+  <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6">
+    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-medium">
+       {/* Light Mode Logo */}
+    <img
+      src="/logo.png" // ← الصورة المناسبة للوضع الفاتح
+      alt="Karwa Logo Light"
+      className="w-full h-full object-contain block dark:hidden"
+    />
+    {/* Dark Mode Logo */}
+    <img
+      src="/logo_dark2.png" // ← الصورة المناسبة للوضع الداكن
+      alt="Karwa Logo Dark"
+      className="w-full h-full object-contain hidden dark:block"
+    />
+    </div>
+    <div>
+      <h3 className="text-xl lg:text-2xl font-bold text-white">
+        {language.code === 'ar' ? 'شركة كروة لتوصيل الطلبات' : 'Karwa Delivery Services'}
+      </h3>
+      <p className="text-sm text-white/70">
+        {language.code === 'ar' ? 'خدمة التوصيل الموثوقة' : 'Reliable Delivery Service'}
+      </p>
+    </div>
+  </div>
+
+  <p className="text-white/80 mb-6 leading-relaxed max-w-md">
+    {t('footer.description')}
+  </p>
+</div>
+
 
             {/* Contact Info */}
             <div className="space-y-3">
