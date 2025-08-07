@@ -41,7 +41,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xl lg:text-2xl font-bold text-white">
-                  {language.code === 'ar' ? 'مركز الكويت السريع' : 'Kuwait Express Hub'}
+                  {language.code === 'ar' ? 'شركة كروة لتوصيل الطلبات' : 'Karwa Delivery Services'}
                 </h3>
                 <p className="text-sm text-white/70">
                   {language.code === 'ar' ? 'خدمة التوصيل الموثوقة' : 'Reliable Delivery Service'}
