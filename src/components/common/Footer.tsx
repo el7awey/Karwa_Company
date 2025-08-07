@@ -1,14 +1,14 @@
 import React from 'react';
-import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from 'lucide-react';
+import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
   const { language, t } = useLanguage();
 
   const socialLinks = [
-    { icon: Facebook, href: '#', color: 'hover:text-blue-500' },
-    { icon: Instagram, href: '#', color: 'hover:text-pink-500' },
-    { icon: Twitter, href: '#', color: 'hover:text-blue-400' },
+    { icon: Facebook, href: 'https://www.facebook.com/ahmed.abdelmageid.197072', color: 'hover:text-blue-500' },
+    { icon: Instagram, href: 'https://www.instagram.com/ahmed_abdelmgeid16/?utm_source=ig_web_button_share_sheet', color: 'hover:text-pink-500' },
+  
   ];
 
   const quickLinks = [
@@ -34,21 +34,20 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6">
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-medium">
-                  {/* لوجو الوضع الفاتح */}
-                  <img
-                    src="/logo_dark2.png"
-                    alt="Logo Light"
-                    className="w-13 h-13 object-contain block dark:hidden"
-                  />
-                  {/* لوجو الوضع الداكن */}
-                  <img
-                    src="/logo.png"
-                    alt="Logo Dark"
-                    className="w-13 h-13 object-contain hidden dark:block"
-                  />
-                </div>
-
+              <div className="w-16 h-16 rounded-xl flex items-center justify-center shadow-medium">
+                {/* لوجو الوضع الفاتح */}
+                <img
+                  src="/logo_dark2.png"
+                  alt="Logo Light"
+                  className="w-13 h-13 object-contain block dark:hidden"
+                />
+                {/* لوجو الوضع الداكن */}
+                <img
+                  src="/logo.png"
+                  alt="Logo Dark"
+                  className="w-13 h-13 object-contain hidden dark:block"
+                />
+              </div>
 
               <div>
                 <h3 className="text-xl lg:text-2xl font-bold text-muted-foreground">
