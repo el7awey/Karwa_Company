@@ -155,6 +155,7 @@ const Footer = () => {
           <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
         </div>
       </div>
+      </div> {/* ← تمت إضافة هذا السطر لإغلاق grid container */}
     </footer>
   );
 };
