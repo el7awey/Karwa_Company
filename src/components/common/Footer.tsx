@@ -82,7 +82,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg lg:text-xl font-bold text-foreground dark:text-white mb-6">
+            <h4 className="text-xl lg:text-xl font-bold text-muted-foreground mb-6">
               {language.code === 'ar' ? 'روابط سريعة' : 'Quick Links'}
             </h4>
             <nav className="space-y-3">
@@ -100,7 +100,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg lg:text-xl font-bold text-foreground dark:text-white mb-6">
+            <h4 className="text-xl lg:text-xl font-bold text-muted-foreground mb-6">
               {language.code === 'ar' ? 'خدماتنا' : 'Our Services'}
             </h4>
             <div className="space-y-3 text-muted-foreground">
