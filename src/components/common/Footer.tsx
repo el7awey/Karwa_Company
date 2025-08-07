@@ -29,41 +29,52 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background py-16 lg:py-20">
       <div className="container mx-auto px-4 lg:px-8">
-        
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-16">
-          
-    {/* Company Info */}
+          {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6">
-              <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-medium">
-                <span className="text-primary-foreground font-bold text-xl">K</span>
-              </div>
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-medium">
+                  {/* لوجو الوضع الفاتح */}
+                  <img
+                    src="/logo_dark2.png"
+                    alt="Logo Light"
+                    className="w-13 h-13 object-contain block dark:hidden"
+                  />
+                  {/* لوجو الوضع الداكن */}
+                  <img
+                    src="/logo.png"
+                    alt="Logo Dark"
+                    className="w-13 h-13 object-contain hidden dark:block"
+                  />
+                </div>
+
+
               <div>
-                <h3 className="text-xl lg:text-2xl font-bold text-white">
+                <h3 className="text-xl lg:text-2xl font-bold text-muted-foreground">
                   {language.code === 'ar' ? 'شركة كروة لتوصيل الطلبات' : 'Karwa Delivery Services'}
                 </h3>
-                <p className="text-sm text-white/70">
+                <p className="text-sm text-muted-foreground">
                   {language.code === 'ar' ? 'خدمة التوصيل الموثوقة' : 'Reliable Delivery Service'}
                 </p>
               </div>
             </div>
-            
-            <p className="text-white/80 mb-6 leading-relaxed max-w-md">
+
+            <p className="text-muted-foreground mb-6 leading-relaxed max-w-md">
               {t('footer.description')}
             </p>
 
             {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 rtl:space-x-reverse text-white/80">
+            <div className="space-y-3 text-muted-foreground">
+              <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <MapPin className="w-5 h-5 text-secondary flex-shrink-0" />
                 <span>{t('contact.address')}</span>
               </div>
-              <div className="flex items-center space-x-3 rtl:space-x-reverse text-white/80">
+              <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
                 <span>{t('contact.phone')}</span>
               </div>
-              <div className="flex items-center space-x-3 rtl:space-x-reverse text-white/80">
+              <div className="flex items-center space-x-3 rtl:space-x-reverse">
                 <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
                 <span>{t('contact.email')}</span>
               </div>
@@ -72,7 +83,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg lg:text-xl font-bold text-white mb-6">
+            <h4 className="text-lg lg:text-xl font-bold text-foreground dark:text-white mb-6">
               {language.code === 'ar' ? 'روابط سريعة' : 'Quick Links'}
             </h4>
             <nav className="space-y-3">
@@ -80,7 +91,7 @@ const Footer = () => {
                 <button
                   key={link.key}
                   onClick={() => scrollToSection(link.href)}
-                  className="block text-white/80 hover:text-secondary transition-colors duration-300 text-left"
+                  className="block text-muted-foreground hover:text-secondary transition-colors duration-300 text-left"
                 >
                   {t(link.key)}
                 </button>
@@ -90,10 +101,10 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg lg:text-xl font-bold text-white mb-6">
+            <h4 className="text-lg lg:text-xl font-bold text-foreground dark:text-white mb-6">
               {language.code === 'ar' ? 'خدماتنا' : 'Our Services'}
             </h4>
-            <div className="space-y-3 text-white/80">
+            <div className="space-y-3 text-muted-foreground">
               <div>{language.code === 'ar' ? 'التوصيل السريع' : 'Express Delivery'}</div>
               <div>{language.code === 'ar' ? 'التوصيل المجدول' : 'Scheduled Delivery'}</div>
               <div>{language.code === 'ar' ? 'الطلبات الكبيرة' : 'Bulk Orders'}</div>
@@ -103,12 +114,11 @@ const Footer = () => {
         </div>
 
         {/* Social Media & Copyright */}
-        <div className="border-t border-white/20 pt-8 lg:pt-12">
+        <div className="border-t border-muted pt-8 lg:pt-12">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            
             {/* Social Media */}
             <div className="flex items-center space-x-4 rtl:space-x-reverse">
-              <span className="text-white/80 text-sm lg:text-base">
+              <span className="text-muted-foreground text-sm lg:text-base">
                 {t('footer.social')}:
               </span>
               {socialLinks.map((social, index) => (
@@ -125,7 +135,7 @@ const Footer = () => {
             </div>
 
             {/* Copyright */}
-            <div className="text-white/60 text-sm lg:text-base text-center md:text-right rtl:md:text-left">
+            <div className="text-muted-foreground text-sm lg:text-base text-center md:text-right rtl:md:text-left">
               <p>
                 © 2024 {language.code === 'ar' ? 'شركة كروة لتوصيل الطلبات' : 'Karwa Delivery Services'}. {t('footer.rights')}
               </p>
