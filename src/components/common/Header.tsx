@@ -220,21 +220,6 @@ const Header = () => {
                     </motion.button>
                   ))}
 
-                  {/* Language Switcher في القائمة الجوال */}
-                  <motion.div
-                    className="pt-4 border-t border-border/50"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.4 }}
-                  >
-                    <button
-                      onClick={toggleLanguage}
-                      className="flex items-center space-x-3 rtl:space-x-reverse w-full px-4 py-3 text-muted-foreground hover:text-primary hover:bg-muted/50 rounded-xl transition-all duration-300"
-                    >
-                      <Globe className="w-5 h-5" />
-                      <span>{language.code === 'en' ? 'Switch to العربية' : 'Switch to English'}</span>
-                    </button>
-                  </motion.div>
                 </nav>
               </motion.div>
             </>
