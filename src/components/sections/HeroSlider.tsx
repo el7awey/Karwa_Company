@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Truck, Clock, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import heroTeam from '@/assets/hero-team.jpg';
-import heroVehicles from '@/assets/hero-vehicles.jpg';
-import heroOperations from '@/assets/hero-operations.jpg';
+import heroTeam from '@/assets/hero-team.webp';
+import heroVehicles from '@/assets/hero-vehicles.webp';
+import heroOperations from '@/assets/hero-operations.webp';
 
 const HeroSlider = () => {
   const { language, t } = useLanguage();
