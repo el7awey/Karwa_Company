@@ -68,15 +68,17 @@ const About = () => {
                   : 'We pride ourselves on our trained specialized team, modern vehicle fleet, and advanced tracking system that ensures your orders arrive on time.'
                 }
               </p>
-              <div className="pt-6">
-                <button
-                  onClick={() => navigate("/pdf")}
-                  className="inline-block px-8 py-4 rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-semibold shadow-lg hover:opacity-90 transition"
-                >
-                  {language.code === 'ar' ? 'اعرف المزيد عنا' : 'Learn More About Us'}
-                </button>
-              </div>
-            </div>
+                  <div className="pt-6">
+  <a
+    href="https://nlhjuscebquwslzqtsva.supabase.co/storage/v1/object/public/about/about.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block px-8 py-4 rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-semibold shadow-lg hover:opacity-90 transition"
+  >
+    {language.code === 'ar' ? 'اعرف المزيد عنا' : 'Learn More About Us'}
+  </a>
+</div>
+</div>
 
             {/* Key Features */}
             <div className="space-y-4">
