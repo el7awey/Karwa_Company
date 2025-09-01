@@ -14,7 +14,7 @@ import Maintenance from "@/components/sections/Maintenance.tsx"; // ✅ صفحة
 const queryClient = new QueryClient();
 
 // ✨ ب True and False يتحكم في وضع الصيانه
-const IS_UNDER_MAINTENANCE = false;
+const IS_UNDER_MAINTENANCE = true;
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
