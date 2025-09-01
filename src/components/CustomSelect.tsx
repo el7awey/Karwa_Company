@@ -32,7 +32,7 @@ export default function CustomSelect({
       <button
         type="button"
         onClick={toggleOpen}
-        className="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-muted-foreground/20 bg-muted/30 text-white focus:ring-2 focus:ring-primary focus:outline-none"
+         className="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-muted-foreground/20 bg-muted/30 focus:ring-2 focus:ring-primary focus:outline-none"
         dir={language.code === "ar" ? "rtl" : "ltr"}
       >
         <span>
@@ -74,3 +74,4 @@ export default function CustomSelect({
     </div>
   );
 }
+
