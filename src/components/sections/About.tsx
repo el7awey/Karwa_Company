@@ -1,9 +1,11 @@
 import React from 'react';
 import { Users, MapPin, Award, Clock } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
   const { language, t } = useLanguage();
+  const navigate = useNavigate();
 
   const stats = [
     {
@@ -66,16 +68,14 @@ const About = () => {
                   : 'We pride ourselves on our trained specialized team, modern vehicle fleet, and advanced tracking system that ensures your orders arrive on time.'
                 }
               </p>
-                <div className="pt-6">
-             <button
-  onClick={() => window.open("https://drive.google.com/file/d/1j5c2BumYjvmxZzpsIMx1GYB-erF8zTfE/view?usp=sharing", "_blank")}
-  className="inline-block px-8 py-4 rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-semibold shadow-lg hover:opacity-90 transition"
->
-  {language.code === 'ar' ? 'اعرف المزيد عنا' : 'Learn More About Us'}
-</button>
-
-
-                </div>
+              <div className="pt-6">
+                <button
+                  onClick={() => navigate("/pdf")}
+                  className="inline-block px-8 py-4 rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-semibold shadow-lg hover:opacity-90 transition"
+                >
+                  {language.code === 'ar' ? 'اعرف المزيد عنا' : 'Learn More About Us'}
+                </button>
+              </div>
             </div>
 
             {/* Key Features */}
@@ -139,8 +139,7 @@ const About = () => {
             <p className="text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               {language.code === 'ar'
                 ? 'نسعى لأن نكون الخيار الأول لخدمات التوصيل في الكويت من خلال تقديم خدمة متميزة وموثوقة تلبي احتياجات عملائنا وتتجاوز توقعاتهم.'
-                : 'We strive to be the first choice for delivery services in Kuwait by providing exceptional and reliable service that meets our customers\' needs and exceeds their expectations.'
-              }
+                : 'We strive to be the first choice for delivery services in Kuwait by providing exceptional and reliable service that meets our customers\' needs and exceeds their expectations.'}
             </p>
           </div>
         </div>
