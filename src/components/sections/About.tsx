@@ -70,7 +70,7 @@ const About = () => {
               </p>
                   <div className="pt-6">
   <a
-    href="https://nlhjuscebquwslzqtsva.supabase.co/storage/v1/object/public/about/about.pdf"
+    href="https://nlhjuscebquwslzqtsva.supabase.co/storage/v1/object/public/about/about_Karwa.pdf"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-block px-8 py-4 rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-semibold shadow-lg hover:opacity-90 transition"
