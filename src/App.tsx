@@ -8,9 +8,13 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import About from "@/components/sections/About"; 
-import PdfPage from "@/components/sections/PdfPage"; // ✅ صفحة الـ PDF
+import PdfPage from "@/components/sections/PdfPage";
+import Maintenance from "@/components/sections/Maintenance.tsx"; // ✅ صفحة الصيانة
 
 const queryClient = new QueryClient();
+
+// ✨ ب True and False يتحكم في وضع الصيانه
+const IS_UNDER_MAINTENANCE = false;
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -20,19 +24,20 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            <Routes>
-              {/* ✅ الصفحة الرئيسية */}
-              <Route path="/" element={<Index />} />
-
-              {/* ✅ صفحة من نحن */}
-              <Route path="/about" element={<About />} />
-
-              {/* ✅ صفحة PDF */}
-              <Route path="/pdf" element={<PdfPage />} />
-
-              {/* ✅ صفحة الخطأ */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            {IS_UNDER_MAINTENANCE ? (
+              // ✅ لو الصيانة شغالة: أي Route يفتح صفحة الصيانة
+              <Routes>
+                <Route path="*" element={<Maintenance />} />
+              </Routes>
+            ) : (
+              // ✅ لو مش صيانة: ارجع للـ Routes الأصلية
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/pdf" element={<PdfPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            )}
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>
