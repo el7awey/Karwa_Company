@@ -7,6 +7,8 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import About from "@/components/sections/About"; 
+import PdfPage from "@/components/sections/PdfPage"; // ✅ صفحة الـ PDF
 
 const queryClient = new QueryClient();
 
@@ -19,8 +21,16 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <Routes>
+              {/* ✅ الصفحة الرئيسية */}
               <Route path="/" element={<Index />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
+              {/* ✅ صفحة من نحن */}
+              <Route path="/about" element={<About />} />
+
+              {/* ✅ صفحة PDF */}
+              <Route path="/pdf" element={<PdfPage />} />
+
+              {/* ✅ صفحة الخطأ */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
