@@ -38,7 +38,7 @@ const About = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-20">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-gradient leading-relaxed">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-gradient leading-relaxed pb-3">
             {t('about.title')}
           </h2>
           <p className="text-lg lg:text-xl text-secondary font-medium mb-8">
@@ -60,12 +60,22 @@ const About = () => {
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 {t('about.description')}
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 {language.code === 'ar'
                   ? 'نفخر بفريق عمل مدرب ومتخصص، وأسطول حديث من المركبات، ونظام تتبع متطور يضمن وصول طلباتكم في الوقت المحدد.'
                   : 'We pride ourselves on our trained specialized team, modern vehicle fleet, and advanced tracking system that ensures your orders arrive on time.'
                 }
               </p>
+                <div className="pt-6">
+             <button
+  onClick={() => window.open("https://drive.google.com/file/d/1j5c2BumYjvmxZzpsIMx1GYB-erF8zTfE/view?usp=sharing", "_blank")}
+  className="inline-block px-8 py-4 rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-semibold shadow-lg hover:opacity-90 transition"
+>
+  {language.code === 'ar' ? 'اعرف المزيد عنا' : 'Learn More About Us'}
+</button>
+
+
+                </div>
             </div>
 
             {/* Key Features */}
@@ -123,7 +133,7 @@ const About = () => {
         {/* Mission Statement */}
         <div className="mt-20 lg:mt-32">
           <div className="bg-gradient-to-r from-primary/10 via-transparent to-secondary/10 rounded-3xl p-8 lg:p-16 text-center">
-            <h3 className="text-2xl lg:text-4xl font-bold mb-6 text-gradient">
+            <h3 className="text-2xl lg:text-4xl font-bold mb-6 text-gradient pb-3">
               {language.code === 'ar' ? 'رؤيتنا ورسالتنا' : 'Our Vision & Mission'}
             </h3>
             <p className="text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
