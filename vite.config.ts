@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, type ViteDevServer } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
@@ -11,8 +11,19 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === "development" && componentTagger(),
+    {
+    name: "pdf-mime-fix",
+  configureServer(server: ViteDevServer) {
+    server.middlewares.use((req, res, next) => {
+      if (req.url && req.url.endsWith(".pdf")) {
+        res.setHeader("Content-Type", "application/pdf");
+        res.setHeader("Content-Disposition", "inline"); // 👈 ده اللي بيمنع التحميل
+      }
+      next();
+        });
+      },
+    },
   ].filter(Boolean),
   resolve: {
     alias: {
